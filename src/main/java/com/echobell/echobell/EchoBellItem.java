@@ -42,7 +42,7 @@ public class EchoBellItem extends Item {
 
         if (!level.isClientSide) {
             BlockPos pos = player.blockPosition();
-            level.playSound(null, pos, SoundEvents.BELL_BLOCK.value(), SoundSource.PLAYERS, 1.0F, 1.0F);
+            level.playSound(null, pos, SoundEvents.BELL_BLOCK, SoundSource.PLAYERS, 1.0F, 1.0F);
 
             for (LivingEntity target : level.getEntitiesOfClass(LivingEntity.class,
                     player.getBoundingBox().inflate(RADIUS),
