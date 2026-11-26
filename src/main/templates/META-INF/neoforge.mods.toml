@@ -1,0 +1,12 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="ASUS"
+description='''
+A tiny vanilla-flavoured trinket: ring the Echo Bell to make nearby creatures glow for a few seconds.
+'''

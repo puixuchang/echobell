@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "pattern": [
+    " E ",
+    "EBE",
+    " E "
+  ],
+  "key": {
+    "E": "minecraft:echo_shard",
+    "B": "minecraft:bell"
+  },
+  "result": {
+    "id": "echobell:echo_bell",
+    "count": 1
+  }
+}

@@ -1,0 +1,51 @@
+回响之铃 (Echo Bell) — NeoForge 1.21.1 模组工程
+================================================
+
+内容
+----
+一个很小的原版向模组：右键摇铃，让 16 格内所有生物发光 10 秒，并播放一声钟响。
+- 冷却 5 秒，不可堆叠
+- 合成：回音碎片 x4 + 铃铛 x1（十字形）
+- 支持中英文
+
+
+如何构建（需要一台能上网的电脑）
+--------------------------------
+环境要求：
+1. JDK 21（Temurin / Corretto / 微软版都行）
+2. 能访问 https://maven.neoforged.net （构建时要从这里下载 NeoForge 工具链）
+
+步骤：
+1. 解压本压缩包到任意英文路径，例如 D:\echobell
+2. 打开命令行，进入该目录
+3. 设置 JDK 21（示例）：
+   set JAVA_HOME=C:\Program Files\Eclipse Adoptium\jdk-21.0.13.10002-hotspot
+   set PATH=%JAVA_HOME%\bin;%PATH%
+4. 执行：
+   gradlew.bat build
+5. 首次构建会下载 Gradle 和大量依赖，约 5~15 分钟
+
+产物位置：
+   build\libs\echobell-1.0.0.jar
+
+把该 jar 丢进 .minecraft\mods 即可（需要 NeoForge 1.21.1）。
+
+
+如果只想让 GitHub 云端编译
+--------------------------
+把本文件夹整体上传到一个 GitHub 仓库，仓库里已包含
+.github/workflows/build.yml，推送后会自动构建，
+在 Actions 页面可以下载 echobell-jar 产物。
+
+
+目录结构
+--------
+build.gradle                       构建脚本（ModDevGradle）
+gradle.properties                  模组信息与版本
+settings.gradle                    Gradle 设置
+gradlew / gradlew.bat              Gradle Wrapper
+src/main/java/com/echobell/echobell/EchoBell.java       主类，注册物品
+src/main/java/com/echobell/echobell/EchoBellItem.java   摇铃逻辑
+src/main/resources/assets/echobell/...                  贴图、模型、语言文件
+src/main/resources/data/echobell/recipe/echo_bell.json  合成配方
+src/main/templates/META-INF/neoforge.mods.toml          模组元数据
